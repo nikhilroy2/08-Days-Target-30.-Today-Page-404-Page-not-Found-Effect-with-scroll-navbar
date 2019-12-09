@@ -1,0 +1,133 @@
+/*............Global Settings.........*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    min-height: 300vh;
+    background: linear-gradient(rgba(0, 0, 255, .4), rgba(0, 0, 255, .4)), url('https://cdn.pixabay.com/photo/2019/12/05/05/50/san-francisco-4674351__340.jpg') 0px 0px/ 100% 100vh no-repeat;
+}
+
+
+/*............Header.........*/
+
+.m_bar {
+    font-size: 32px;
+    color: black;
+    padding: 5px 10px;
+    background: white;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .m_bar {
+        display: inline-block;
+    }
+    header {
+        z-index: 200!important;
+        position: relative;
+    }
+    header ul {
+        background: #898BF5;
+        text-align: left!important;
+        position: absolute;
+        height: 0px;
+        opacity: 0;
+        transition: 1s;
+        visibility: hidden;
+    }
+    header ul.m_show {
+        height: 400px;
+        opacity: 1;
+        visibility: visible;
+    }
+    header ul li {
+        width: 100%;
+    }
+    header ul li a {
+        width: 100%;
+        padding-left: 25px!important;
+    }
+}
+
+header {
+    transition: 1s;
+}
+
+
+/*................Scroll Animation........*/
+
+@keyframes headerUl {
+    0% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0px)
+    }
+}
+
+header ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+    /* background: #002; */
+    box-shadow: 0 3px 10px black;
+}
+
+header ul li {
+    display: inline-block;
+}
+
+header ul li a {
+    display: inline-block;
+    padding: 15px 12px;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 18px;
+    text-shadow: 2px 2px 5px white;
+    transition: .5s;
+}
+
+header ul li a:hover {
+    background: rgba(0, 255, 255, .4);
+}
+
+.page_404 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 4px 4px 15px blue;
+    z-index: -1;
+}
+
+@media screen and (max-width: 600px) {
+    .page_404 {
+        font-size: 80%;
+    }
+}
+
+.page_404 h1 {
+    font-size: 6em;
+}
+
+.page_404 h3 {
+    font-size: 4em;
+}
+
+.project {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    background: cyan;
+    padding: 8px 12px;
+    text-shadow: 2px 2px 5px wheat;
+}
